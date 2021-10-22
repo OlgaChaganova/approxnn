@@ -29,14 +29,17 @@ if __name__ == '__main__':
     valid_loader = get_dataloader(dataset, valid_files, config.BATCH_SIZE)
     test_loader = get_dataloader(dataset, test_files, config.BATCH_SIZE)
 
-    model = ConvNet(in_channels=1,
-                    out_channels=[4, 8, 16, 1],
-                    kernel_size=[3, 3, 3, 3],
-                    stride=[1, 1, 1, 1],
-                    padding=[1, 1, 1, 1]).to(config.DEVICE)
+    model = ConvNet(in_channels=config.IN_CHANNELS,
+                    out_channels=config.OUT_CHANNELS,
+                    kernel_size=config.KERNEL_SIZE,
+                    stride=config.STRIDE,
+                    padding=config.PADDING).to(config.DEVICE)
 
     optimizer = torch.optim.Adam(model.parameters())
     loss = nn.BCELoss()
+
+    print('Model:')
+    print(model)
 
     print('Parameters of the model:')
     print(summary(model, (1, 64, 64)))

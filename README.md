@@ -1,5 +1,10 @@
 ## Approximation of classic algorithms with neural networks
 
+To clone this repository on your local computer, run in terminal:
+```
+git clone https://github.com/OlgaChaganova/approxnn
+```
+
 To install all dependencies, run:
 ```
 pip install -r requirements.txt
