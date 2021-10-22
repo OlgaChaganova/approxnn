@@ -1,0 +1,12 @@
+# data
+*.zip
+NoisyOffice/
+tiny-imagenet-200/
+
+# outputs
+*.png
+
+# configs
+venv/
+.idea/
+__pycache__/
